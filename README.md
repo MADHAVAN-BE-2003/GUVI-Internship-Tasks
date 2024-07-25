@@ -73,10 +73,3 @@ As this repository is part of my internship, contributions are primarily for per
 ## License
 
 The code in this repository is provided as-is and is intended for educational and demonstration purposes. All rights are reserved by GUVI Geek Networks, IITM Research Park.
-
----
-
-Thank you for checking out my internship tasks and projects. For any questions or further information, please feel free to reach out.
-```
-
-You can copy and paste this Markdown text into your `README.md` file. Adjust the details for other tasks as needed!
