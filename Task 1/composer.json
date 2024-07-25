@@ -1,0 +1,22 @@
+{
+    "name": "madhavan/userform",
+    "description": "Guvi Task (User Form)",
+    "type": "project",
+    "require": {
+        "mongodb/mongodb": "^1.19",
+        "predis/predis": "^2.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Madhavan\\Userform\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MADHAVAN-BE-2003",
+            "email": "117741972+MADHAVAN-BE-2003@users.noreply.github.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
