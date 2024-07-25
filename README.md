@@ -6,7 +6,7 @@ Welcome to the GUVI Internship Tasks repository! This repository contains tasks 
 
 GUVI Geek Networks, IITM Research Park is a leading company focused on providing high-quality technology solutions and learning resources. The company is dedicated to fostering a learning environment and helping individuals grow their technical skills. As a Development Trainee Intern, I am involved in various projects to apply my knowledge and contribute to the company's goals.
 
-## Task 1: Next Steps Implementation
+## Task 1:
 
 ### Overview
 
