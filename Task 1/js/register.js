@@ -14,7 +14,7 @@ let registerFormSubmit = (event, formData) => {
     data: formData,
     success: function (response) {
       console.log(response);
-      var res = JSON.parse(response);
+      var res = response;
       alert(res.message);
       if (res.status === "success") {
         window.location.href = "login.html";
