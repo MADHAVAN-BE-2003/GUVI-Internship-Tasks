@@ -2,10 +2,10 @@
 require '../vendor/autoload.php';
 header('Content-Type: application/json');
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "user_management";
+$servername = "sql12.freemysqlhosting.net";
+$username = "sql12722312";
+$password = "78bUiRQrYB";
+$dbname = "sql12722312";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -16,11 +16,7 @@ try {
 }
 
 try {
-    $redis = new Predis\Client([
-        'scheme' => 'tcp',
-        'host' => '127.0.0.1',
-        'port' => 6379,
-    ]);
+    $redis = new Predis\Client('rediss://red-cqhqq7qju9rs738qf4eg:xXFV7lEd0sBhbjpSzuFEHw74NEKZv5yv@singapore-redis.render.com:6379');
 } catch (Exception $e) {
     echo json_encode(["status" => "error", "message" => "Failed to connect to Redis: " . $e->getMessage()]);
     exit();

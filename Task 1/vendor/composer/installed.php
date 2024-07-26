@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'madhavan/userform',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '2fb3cb23c39a08bbcabe1e23a3aff8dec8cbc35c',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'madhavan/userform' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '2fb3cb23c39a08bbcabe1e23a3aff8dec8cbc35c',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

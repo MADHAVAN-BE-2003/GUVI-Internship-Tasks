@@ -1,9 +1,13 @@
 <?php
 header('Content-Type: application/json');
 require '../vendor/autoload.php';
+use MongoDB\Driver\ServerApi;
+
+$apiVersion = new ServerApi(ServerApi::V1);
+$uri = 'mongodb+srv://user_form:0ZU51QXSAARdDN8G@cluster0.tdmy0pa.mongodb.net/user_management';
 
 try {
-    $client = new MongoDB\Client("mongodb://localhost:27017");
+    $client = new MongoDB\Client($uri, [], ['serverApi' => $apiVersion]);
     $collection = $client->user_management->profiles;
 } catch (Exception $e) {
     echo json_encode(["status" => "error", "message" => "Failed to connect to MongoDB: " . $e->getMessage()]);
@@ -11,11 +15,7 @@ try {
 }
 
 try {
-    $redis = new Predis\Client([
-        'scheme' => 'tcp',
-        'host' => '127.0.0.1',
-        'port' => 6379,
-    ]);
+    $redis = new Predis\Client('rediss://red-cqhqq7qju9rs738qf4eg:xXFV7lEd0sBhbjpSzuFEHw74NEKZv5yv@singapore-redis.render.com:6379');
 } catch (Exception $e) {
     echo json_encode(["status" => "error", "message" => "Failed to connect to Redis: " . $e->getMessage()]);
     exit();

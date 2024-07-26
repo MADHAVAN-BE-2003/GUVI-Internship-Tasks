@@ -1,11 +1,15 @@
 <?php
 header('Content-Type: application/json');
 require '../vendor/autoload.php';
+use MongoDB\Driver\ServerApi;
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "user_management";
+$servername = "sql12.freemysqlhosting.net";
+$username = "sql12722312";
+$password = "78bUiRQrYB";
+$dbname = "sql12722312";
+
+$apiVersion = new ServerApi(ServerApi::V1);
+$uri = 'mongodb+srv://user_form:0ZU51QXSAARdDN8G@cluster0.tdmy0pa.mongodb.net/user_management';
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -16,7 +20,7 @@ try {
 }
 
 try {
-    $client = new MongoDB\Client("mongodb://localhost:27017");
+    $client = new MongoDB\Client($uri, [], ['serverApi' => $apiVersion]);
     $collection = $client->user_management->profiles;
 } catch (Exception $e) {
     echo json_encode(["status" => "error", "message" => "Connection to MongoDB failed: " . $e->getMessage()]);
