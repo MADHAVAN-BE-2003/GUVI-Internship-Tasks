@@ -27,7 +27,7 @@ function loginUser(formData, rememberMe) {
 
       var res;
       try {
-        res = response;
+        res = JSON.parse(response);
       } catch (error) {
         console.error("Failed:", error);
         return;
