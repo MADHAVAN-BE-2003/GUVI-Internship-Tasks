@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  console.log(BACKEND_URL);
   if (localStorage.getItem("rememberMe") === "true") {
     $("#loginUsername").val(localStorage.getItem("username"));
     $("#loginPassword").val(localStorage.getItem("password"));
@@ -19,7 +20,7 @@ function loginUser(formData, rememberMe) {
   console.log(formData);
   $.ajax({
     type: "POST",
-    url: `${process.env.BACKEND_URL}/login.php`,
+    url: `${BACKEND_URL}/login.php`,
     dataType: "json",
     data: formData,
     success: function (response) {

@@ -10,7 +10,7 @@ let registerFormSubmit = (event, formData) => {
   event.preventDefault();
   $.ajax({
     type: "POST",
-    url: `${process.env.BACKEND_URL}/register.php`,
+    url: `${BACKEND_URL}/register.php`,
     data: formData,
     success: function (response) {
       console.log(response);
