@@ -2,11 +2,11 @@ $(document).ready(function () {
   let backendUrl = "https://fond-generally-stag.ngrok-free.app/Task%201/php";
   $("#registerForm").on("submit", function (event) {
     let formData = $(this).serialize();
-    registerFormSubmit(event, formData);
+    registerFormSubmit(event, formData, backendUrl);
   });
 });
 
-let registerFormSubmit = (event, formData) => {
+let registerFormSubmit = (event, formData, backendUrl) => {
   console.log(formData);
   event.preventDefault();
   $.ajax({

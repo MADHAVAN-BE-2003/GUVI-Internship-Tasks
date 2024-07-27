@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  let backendUrl = "https://fond-generally-stag.ngrok-free.app/Task%201/php";
   var token = localStorage.getItem("email");
   console.log(token);
 
@@ -52,6 +51,7 @@ let setProfileFields = (profile) => {
 };
 
 let fetchProfileData = (email) => {
+  let backendUrl = "https://fond-generally-stag.ngrok-free.app/Task%201/php";
   $.ajax({
     type: "GET",
     url: `${backendUrl}/profile.php`,
@@ -77,6 +77,7 @@ let fetchProfileData = (email) => {
 };
 
 let handleProfileFormSubmit = (event, token) => {
+  let backendUrl = "https://fond-generally-stag.ngrok-free.app/Task%201/php";
   event.preventDefault();
   console.log("Form submitted");
 
