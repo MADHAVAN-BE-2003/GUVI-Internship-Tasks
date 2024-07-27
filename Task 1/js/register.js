@@ -1,3 +1,5 @@
+import config from "./config.js";
+
 $(document).ready(function () {
   $("#registerForm").on("submit", function (event) {
     let formData = $(this).serialize();
@@ -10,7 +12,7 @@ let registerFormSubmit = (event, formData) => {
   event.preventDefault();
   $.ajax({
     type: "POST",
-    url: "php/register.php",
+    url: `${config.BACKEND_URL}/register.php`,
     data: formData,
     success: function (response) {
       console.log(response);

@@ -1,5 +1,7 @@
+import config from "./config.js";
+
 $(document).ready(function () {
-  var token = getToken();
+  var token = localStorage.getItem("email");
   console.log(token);
 
   if (!token) {
@@ -30,10 +32,6 @@ let redirectToLogin = () => {
   window.location.href = "login.html";
 };
 
-let getStoredEmail = () => {
-  return localStorage.getItem("email");
-};
-
 let populateProfileFields = () => {
   var storedEmail = getStoredEmail();
   if (storedEmail) {
@@ -57,7 +55,7 @@ let setProfileFields = (profile) => {
 let fetchProfileData = (email) => {
   $.ajax({
     type: "GET",
-    url: "php/profile.php",
+    url: `${config.BACKEND_URL}/profile.php`,
     data: { email: email },
     dataType: "json",
     success: function (response) {
@@ -72,7 +70,7 @@ let fetchProfileData = (email) => {
     error: function (xhr, status, error) {
       console.error("AJAX Error:", status, error);
       console.error("Response Text:", xhr.responseText);
-      showAlertMessage(
+      alert(
         "An error occurred while fetching your profile data. Please try again."
       );
     },
@@ -90,31 +88,27 @@ let handleProfileFormSubmit = (event, token) => {
   console.log(data);
   $.ajax({
     type: "POST",
-    url: "php/profile.php",
+    url: `${config.BACKEND_URL}/profile.php`,
     data: data,
     dataType: "json",
     success: function (response) {
       console.log(response);
       try {
         var res = response;
-        showAlertMessage(res.message);
+        alert(res.message);
       } catch (e) {
         console.error("Error parsing JSON response:", e);
-        showAlertMessage("An error occurred. Please try again.");
+        alert("An error occurred. Please try again.");
       }
     },
     error: function (xhr, status, error) {
       console.error("AJAX Error:", status, error);
       console.error("Response Text:", xhr.responseText);
-      showAlertMessage(
+      alert(
         "An error occurred while processing your request. Please try again."
       );
     },
   });
-};
-
-let showAlertMessage = (message) => {
-  alert(message);
 };
 
 let logout = () => {

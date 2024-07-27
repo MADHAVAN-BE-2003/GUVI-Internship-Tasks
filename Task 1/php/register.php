@@ -1,15 +1,15 @@
 <?php
 header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: POST, GET");
+header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
 require '../vendor/autoload.php';
-use MongoDB\Driver\ServerApi;
 
-$servername = "sql12.freemysqlhosting.net";
-$username = "sql12722312";
-$password = "78bUiRQrYB";
-$dbname = "sql12722312";
-
-$apiVersion = new ServerApi(ServerApi::V1);
-$uri = 'mongodb+srv://user_form:0ZU51QXSAARdDN8G@cluster0.tdmy0pa.mongodb.net/user_management';
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "user_management";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -20,7 +20,7 @@ try {
 }
 
 try {
-    $client = new MongoDB\Client($uri, [], ['serverApi' => $apiVersion]);
+    $client = new MongoDB\Client("mongodb://localhost:27017");
     $collection = $client->user_management->profiles;
 } catch (Exception $e) {
     echo json_encode(["status" => "error", "message" => "Connection to MongoDB failed: " . $e->getMessage()]);
@@ -28,9 +28,9 @@ try {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username = $_POST['username'];
-    $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    $email = $_POST['email'];
+    $username = $_POST['registerUsername'];
+    $password = password_hash($_POST['registerPassword'], PASSWORD_BCRYPT);
+    $email = $_POST['registerEmail'];
 
     $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
     $mysqlSuccess = $stmt->execute([$username, $password, $email]);

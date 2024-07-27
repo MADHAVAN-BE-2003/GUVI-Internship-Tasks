@@ -1,7 +1,9 @@
+import config from "./config.js";
+
 $(document).ready(function () {
   if (localStorage.getItem("rememberMe") === "true") {
-    $("#username").val(localStorage.getItem("username"));
-    $("#password").val(localStorage.getItem("password"));
+    $("#loginUsername").val(localStorage.getItem("username"));
+    $("#loginPassword").val(localStorage.getItem("password"));
     $("#form-checkbox").prop("checked", true);
   }
 
@@ -19,7 +21,7 @@ function loginUser(formData, rememberMe) {
   console.log(formData);
   $.ajax({
     type: "POST",
-    url: "php/login.php",
+    url: `${config.BACKEND_URL}/login.php`,
     dataType: "json",
     data: formData,
     success: function (response) {
@@ -38,8 +40,8 @@ function loginUser(formData, rememberMe) {
         if (rememberMe) {
           localStorage.setItem("session_token", res.token);
           localStorage.setItem("rememberMe", true);
-          localStorage.setItem("username", $("#username").val());
-          localStorage.setItem("password", $("#password").val());
+          localStorage.setItem("username", $("#loginUsername").val());
+          localStorage.setItem("password", $("#loginPassword").val());
         } else {
           sessionStorage.setItem("session_token", res.token);
           localStorage.removeItem("rememberMe");
