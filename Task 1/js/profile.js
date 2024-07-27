@@ -31,7 +31,7 @@ let redirectToLogin = () => {
 };
 
 let populateProfileFields = () => {
-  var storedEmail = getStoredEmail();
+  var storedEmail = localStorage.getItem("email");
   if (storedEmail) {
     $("#email").val(storedEmail);
     fetchProfileData(storedEmail);
