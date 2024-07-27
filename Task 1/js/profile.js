@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  let backendUrl = "https://fond-generally-stag.ngrok-free.app/Task%201/php";
   var token = localStorage.getItem("email");
   console.log(token);
 
@@ -53,7 +54,7 @@ let setProfileFields = (profile) => {
 let fetchProfileData = (email) => {
   $.ajax({
     type: "GET",
-    url: `${env.BACKEND_URL}/profile.php`,
+    url: `${backendUrl}/profile.php`,
     data: { email: email },
     dataType: "json",
     success: function (response) {
@@ -86,7 +87,7 @@ let handleProfileFormSubmit = (event, token) => {
   console.log(data);
   $.ajax({
     type: "POST",
-    url: `${env.BACKEND_URL}/profile.php`,
+    url: `${backendUrl}/profile.php`,
     data: data,
     dataType: "json",
     success: function (response) {

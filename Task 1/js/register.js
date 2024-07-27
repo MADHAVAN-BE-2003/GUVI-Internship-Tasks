@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  let backendUrl = "https://fond-generally-stag.ngrok-free.app/Task%201/php";
   $("#registerForm").on("submit", function (event) {
     let formData = $(this).serialize();
     registerFormSubmit(event, formData);
@@ -10,7 +11,7 @@ let registerFormSubmit = (event, formData) => {
   event.preventDefault();
   $.ajax({
     type: "POST",
-    url: `${env.BACKEND_URL}/register.php`,
+    url: `${backendUrl}/register.php`,
     data: formData,
     success: function (response) {
       console.log(response);

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  console.log(env.BACKEND_URL);
+  let backendUrl = "https://fond-generally-stag.ngrok-free.app/Task%201/php";
   if (localStorage.getItem("rememberMe") === "true") {
     $("#loginUsername").val(localStorage.getItem("username"));
     $("#loginPassword").val(localStorage.getItem("password"));
@@ -20,7 +20,7 @@ function loginUser(formData, rememberMe) {
   console.log(formData);
   $.ajax({
     type: "POST",
-    url: `${env.BACKEND_URL}/login.php`,
+    url: `${backendUrl}/login.php`,
     dataType: "json",
     data: formData,
     success: function (response) {
