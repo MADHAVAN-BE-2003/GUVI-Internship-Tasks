@@ -1,5 +1,3 @@
-import config from "./config.js";
-
 $(document).ready(function () {
   var token = localStorage.getItem("email");
   console.log(token);
@@ -55,7 +53,7 @@ let setProfileFields = (profile) => {
 let fetchProfileData = (email) => {
   $.ajax({
     type: "GET",
-    url: `${config.BACKEND_URL}/profile.php`,
+    url: `${process.env.BACKEND_URL}/profile.php`,
     data: { email: email },
     dataType: "json",
     success: function (response) {
@@ -88,7 +86,7 @@ let handleProfileFormSubmit = (event, token) => {
   console.log(data);
   $.ajax({
     type: "POST",
-    url: `${config.BACKEND_URL}/profile.php`,
+    url: `${process.env.BACKEND_URL}/profile.php`,
     data: data,
     dataType: "json",
     success: function (response) {
