@@ -53,7 +53,7 @@ let setProfileFields = (profile) => {
 let fetchProfileData = (email) => {
   $.ajax({
     type: "GET",
-    url: `${BACKEND_URL}/profile.php`,
+    url: `${env.BACKEND_URL}/profile.php`,
     data: { email: email },
     dataType: "json",
     success: function (response) {
@@ -86,7 +86,7 @@ let handleProfileFormSubmit = (event, token) => {
   console.log(data);
   $.ajax({
     type: "POST",
-    url: `${BACKEND_URL}/profile.php`,
+    url: `${env.BACKEND_URL}/profile.php`,
     data: data,
     dataType: "json",
     success: function (response) {
