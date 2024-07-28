@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  var token = localStorage.getItem("email");
+  var token = getToken();
   console.log(token);
 
   if (!token) {
