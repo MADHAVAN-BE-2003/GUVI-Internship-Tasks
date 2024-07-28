@@ -57,6 +57,9 @@ let fetchProfileData = (email) => {
     url: `${backendUrl}/profile.php`,
     data: { email: email },
     dataType: "json",
+    headers: {
+      "ngrok-skip-browser-warning": "69420",
+    },
     success: function (response) {
       console.log(response);
 
@@ -91,6 +94,9 @@ let handleProfileFormSubmit = (event, token) => {
     url: `${backendUrl}/profile.php`,
     data: data,
     dataType: "json",
+    headers: {
+      "ngrok-skip-browser-warning": "69420",
+    },
     success: function (response) {
       console.log(response);
       try {
