@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+// Define colors and dimensions
+$background-color: #ececec;
+$profile-box-width: min(930px, 95%);
+$input-group-border-radius: 0;
+$required-color: red;
+$required-font-size: 18px;
+
+// Apply global styles
+body {
+  font-family: 'Poppins', sans-serif;
+  background: $background-color;
+}
+
+// Profile box area styles
+.profile-box-area {
+  width: $profile-box-width;
+}
+
+// Required field styles
+.required::after {
+  content: "*";
+  color: $required-color;
+  font-size: $required-font-size;
+}
+
+// Input group text styles
+.input-group-text {
+  border-top-right-radius: $input-group-border-radius !important;
+  border-bottom-right-radius: $input-group-border-radius !important;
+}
+
+// Media queries
+@media only screen and (max-width: 768px) {
+  .profile-box-area {
+    margin: 0 10px;
+  }
+  
+  .profileform {
+    overflow-y: hidden;
+  }
+}

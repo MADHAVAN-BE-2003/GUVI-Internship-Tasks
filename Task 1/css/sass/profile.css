@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+body {
+  font-family: "Poppins", sans-serif;
+  background: #ececec;
+}
+
+.profile-box-area {
+  width: min(930px, 95%);
+}
+
+.required::after {
+  content: "*";
+  color: red;
+  font-size: 18px;
+}
+
+.input-group-text {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .profile-box-area {
+    margin: 0 10px;
+  }
+  .profileform {
+    overflow-y: hidden;
+  }
+}/*# sourceMappingURL=profile.css.map */

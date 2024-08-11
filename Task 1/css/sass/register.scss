@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+// Define colors and dimensions
+$background-color: #ececec;
+$custom-box-width: min(700px, 95%);
+$input-group-border-radius: 0;
+$featured-image-shadow: 5px 5px 10px #555;
+$left-box-padding: 40px 30px 40px 40px;
+
+// Apply global styles
+body {
+  font-family: 'Poppins', sans-serif;
+  background: $background-color;
+  padding: 0;
+  margin: 0;
+  height: 100vh; // Corrected from 100dvh
+}
+
+// Custom box styles
+.custom-box {
+  width: $custom-box-width;
+  height: 600px;
+}
+
+// Input group text styles
+.input-group-text {
+  border-top-right-radius: $input-group-border-radius !important;
+  border-bottom-right-radius: $input-group-border-radius !important;
+}
+
+// Featured image styles
+.featured-image {
+  img {
+    filter: drop-shadow($featured-image-shadow);
+  }
+}
+
+// Link styles in form-check-out
+.form-check-out {
+  a {
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Link styles in text-signup
+.text-signup {
+  a {
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Left box styles
+.left-box {
+  padding: $left-box-padding;
+}
+
+// Media queries
+@media only screen and (max-width: 768px) {
+  .box-area {
+    margin: 0 10px;
+  }
+  
+  .left-box {
+    padding: 20px;
+  }
+}

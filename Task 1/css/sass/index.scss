@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+// Define colors and fonts
+$primary-color: #0bb752;
+$secondary-color: #fff;
+$button-font-size: 16px;
+$button-font-weight: 100;
+$button-height: 50px;
+$button-width: 100px;
+
+// Apply global styles
+body {
+  font-family: 'Poppins', sans-serif;
+  background: white;
+  height: 100vh; // Corrected from 100dvh
+}
+
+// Navbar styles
+nav {
+  background-color: $primary-color;
+}
+
+// Custom button styles
+.custom-btn {
+  a {
+    text-decoration: none;
+    color: $primary-color;
+  }
+  
+  &,
+  &:hover {
+    background-color: $secondary-color !important;
+    font-size: $button-font-size;
+    font-weight: $button-font-weight;
+    height: $button-height;
+    width: $button-width;
+  }
+  
+  &:hover {
+    border: $secondary-color solid 3px;
+    background-color: $primary-color !important;
+
+    a {
+      color: $secondary-color !important;
+    }
+  }
+}
+
+// Outline button styles
+.btn-outline-light {
+  a {
+    text-decoration: none;
+    color: $secondary-color;
+  }
+  
+  &,
+  &:hover {
+    font-size: $button-font-size;
+    font-weight: $button-font-weight;
+    height: $button-height;
+    width: $button-width;
+    border: $secondary-color solid 3px;
+  }
+  
+  &:hover {
+    border-color: $primary-color;
+
+    a {
+      color: $primary-color !important;
+    }
+  }
+}
+
+// Image container styles
+.img-container {
+  height: 60vh;
+}
+
+.image {
+  width: min(500px, 90vh);
+  overflow: hidden;
+}
+
+// Media queries
+@media only screen and (max-width: 768px) {
+  .log-sign {
+    padding: 5px;
+  }
+}
